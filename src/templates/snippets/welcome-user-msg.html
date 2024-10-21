@@ -1,0 +1,12 @@
+
+
+<!--this can be reused in anote=her templates by usin {include welcome-user-msg.html}-->
+<div>
+{%if request.user.is_autheticated%}Welmcome User
+
+{%else%}
+
+welcome , even though you are not logged in
+
+{%endif %}
+</div>

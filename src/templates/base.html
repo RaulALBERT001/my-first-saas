@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {%block head_title%}Saas{% endblock head_title %}</title>
+</head>
+<body>
+    
+
+        <h1>{{page_name}}</h1>
+
+    {% block content %}<!--content is the variable, if you that block to be replacede on another page that extends base, you will have to use the same variable name -->
+    
+    <h2>Replace me </h2>
+    
+    
+    {% endblock content %}
+
+
+</body>
+</html>
