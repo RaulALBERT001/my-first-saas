@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-vou=_u44@q95qtf9!=if_sj_$08=d_+g5yx%r(6pc58vq73)gk"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     ".railway.app", #https://saas.prod.railway.app (allows django to run in a domain like this one in production)
