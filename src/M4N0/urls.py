@@ -22,7 +22,7 @@ from M4N0 import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("home-page/", views.home_page_view),
-    path("", views.home_page_view),
-    
+    path("home-page/", views.about_view),
+    path("", views.about_view),
+    path("about/",  views.about_view)
 ]

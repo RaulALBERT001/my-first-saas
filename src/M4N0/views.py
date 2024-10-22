@@ -15,19 +15,31 @@ CURRENT_PATH = Path(__file__).resolve().parent
 
 
 
-def home_page_view(request, *args, **kwargs):
+
+
+
+def about_view(request, *args, **kwargs):
    qset = PageVisitis.objects.all()
    page_qset =PageVisitis.objects.filter(path = None)
+   try:
+        percent  =round( (page_qset.count() *100 ) / qset.count(),2)
+   except ZeroDivisionError:
+        percent = 0
    my_page =  {
        "page_name": "M4N0",     
        "page_visit_count" : qset.count(), 
        "total_page_visit_count" : page_qset.count(),
+       "percent" : percent
    }
    
-   PageVisitis.objects.create()
+   if percent >= 50:
+        PageVisitis.objects.create(path = request.path)
+   elif percent < 50:
+       PageVisitis.objects.create(path = None)
 
    
    return render(request, "home.html", my_page)
+
 
 def base_page_view(request, *args, **kwargs):
     return render(request,"base.html")
